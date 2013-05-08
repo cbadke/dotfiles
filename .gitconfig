@@ -1,9 +1,9 @@
 [user]
     name = Curtis Badke
     email = curtis@badkid.ca
-    
 [diff]
     renames = true
+    guitool = kdiff3
 [mergetool]
     keepBackup = false
 [log]
@@ -35,7 +35,10 @@
 
 [merge]
     tool = vimdiff
+[difftool "kdiff3"]
+    path = C:/Program Files/KDiff3/kdiff3.exe
 [core]
+    autocrlf = true
     editor = vi
 [pull]
     rebase = true
