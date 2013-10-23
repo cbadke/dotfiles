@@ -43,12 +43,15 @@ set backspace=indent,eol,start
 set backupdir=~/.vim/backup
 set directory=~/.vim/backup
 
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+highlight OverLength ctermbg=darkred ctermfg=white guibg=#592929
 set colorcolumn=80
 
 " Settings for VimClojure
 let vimclojure#HighlightBuiltins=1      " Highlight Clojure's builtins
 let vimclojure#ParenRainbow=1           " Rainbow parentheses'!
+
+set splitbelow
+set splitright
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree Config
@@ -103,8 +106,8 @@ function! InsertTabWrapper()
         return "\<c-p>"
     endif
 endfunction
-inoremap <tab> <c-r>=InsertTabWrapper()<cr>
-inoremap <s-tab> <c-n>
+"inoremap <tab> <c-r>=InsertTabWrapper()<cr>
+"inoremap <s-tab> <c-n>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ARROW KEYS ARE UNACCEPTABLE - vim hard mode!
@@ -131,7 +134,9 @@ map <leader>r :call RenameFile()<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " LEADER COMMANDS 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <leader>np :sp ~/Dropbox/notes/notepad.txt<cr>
-map <leader>ts :sp ~/Dropbox/notes/tool-sharpening.txt<cr>
-map <leader>todo :sp ~/Dropbox/notes/todo.txt<cr>
+map <leader>np :sp ~/Dropbox/notes/notepad.txt<cr>r
+map <leader>ts :sp ~/Dropbox/notes/tool-sharpening.txt<cr>r
+map <leader>todo :sp ~/Dropbox/notes/todo.txt<cr>r
+map <leader>clean :set nocul<cr>:set nonumber<cr>
 
+let g:haddock_browser="C:\\Program\ Files\ (x86)\\Google\\Chrome\\Application\\chrome.exe"

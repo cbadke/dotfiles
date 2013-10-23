@@ -1,44 +1,42 @@
 [user]
-    name = Curtis Badke
-    email = curtis@badkid.ca
+	name = Curtis Badke
+	email = curtis@badkid.ca
 [diff]
-    renames = true
-    guitool = kdiff3
+	renames = true
+	guitool = kdiff3
 [mergetool]
-    keepBackup = false
+	keepBackup = false
 [log]
-    date = relative
+	date = relative
 [color]
-    ui = auto
+	ui = auto
 [alias]
-    st = status
-    ci = commit
-    co = checkout
-    di = diff
-    dc = diff --cached
-    amend = commit --amend
-    aa = add --all
-    ff = merge --ff-only
-    pullff = pull --ff-only
-    noff = merge --no-ff
-    fa = fetch --all
-    pom = push origin master
-    b = branch
-    ds = diff --stat=160,120
-    dh1 = diff HEAD~1
-    rbi = rebase -i
-    rbc = rebase --continue
-    rba = rebase --amend
-
-    lg = log --graph --date-order -C -M --pretty=format:\"<%Cred%h%Creset> %ad [%C(yellow)%an%Creset] %Cgreen%d%Creset %s\" --all --date=short
-    new = log origin/master.. --reverse -C -M --pretty=format:\"<%Cred%h%Creset> %ad [%C(yellow)%an%Creset] %Cgreen%d%Creset %s\" --all --date=short
-
+	st = status
+	ci = commit
+	co = checkout
+	di = diff
+	dc = diff --cached
+	amend = commit --amend
+	aa = add --all
+	ff = merge --ff-only
+	pullff = pull --ff-only
+	noff = merge --no-ff
+	fa = fetch --all
+	pom = push origin master
+	b = branch
+	ds = diff --stat=160,120
+	dh1 = diff HEAD~1
+	rbi = rebase -i
+	rbc = rebase --continue
+	rba = rebase --amend
+	lg = log --graph --date-order -C -M --pretty=format:\"<%Cred%h%Creset> %ad [%C(yellow)%an%Creset] %Cgreen%d%Creset %s\" --all --date=short
+	new = log origin/master.. --reverse -C -M --pretty=format:\"<%Cred%h%Creset> %ad [%C(yellow)%an%Creset] %Cgreen%d%Creset %s\" --all --date=short
 [merge]
-    tool = vimdiff
+	tool = vimdiff
 [difftool "kdiff3"]
-    path = C:/Program Files/KDiff3/kdiff3.exe
+	path = C:/Program Files/KDiff3/kdiff3.exe
 [core]
-    autocrlf = true
-    editor = vi
+	autocrlf = true
+	editor = vi
 [pull]
-    rebase = true
+	rebase = true

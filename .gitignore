@@ -8,6 +8,7 @@
 .bash_profile
 .config/
 .dropbox/
+.freemind/
 .gem/
 .gimp-*/
 .gnome*/
