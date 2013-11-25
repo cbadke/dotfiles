@@ -94,6 +94,9 @@ imap <C-k> <esc>:GitGutterPrevHunk<cr>
 nmap <C-h> :bp<cr>
 nmap <C-l> :bn<cr>
 
+nmap <C-s> :w<cr>
+imap <C-s> <esc>:w<cr>i
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MULTIPURPOSE TAB KEY
 " Indent if we're at the beginning of a line. Else, do completion.

@@ -31,6 +31,9 @@
     rba = rebase --amend
     lg = log --graph --date-order -C -M --pretty=format:\"<%Cred%h%Creset> %ad [%C(yellow)%an%Creset] %Cgreen%d%Creset %s\" --all --date=short
     new = log origin/master.. --reverse -C -M --pretty=format:\"<%Cred%h%Creset> %ad [%C(yellow)%an%Creset] %Cgreen%d%Creset %s\" --all --date=short
+
+    scrub = !git reset --hard && git clean -xfd
+
 [merge]
     tool = vimdiff
 [difftool "kdiff3"]
