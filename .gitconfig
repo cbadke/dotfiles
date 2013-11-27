@@ -1,11 +1,6 @@
 [user]
     name = Curtis Badke
     email = curtis@badkid.ca
-[diff]
-    renames = true
-    guitool = kdiff3
-[mergetool]
-    keepBackup = false
 [log]
     date = relative
 [color]
@@ -34,10 +29,19 @@
 
     scrub = !git reset --hard && git clean -xfd
 
-[merge]
-    tool = vimdiff
 [difftool "kdiff3"]
     path = C:/Program Files/KDiff3/kdiff3.exe
+[mergetool "kdiff3"]
+    path = C:/Program Files/KDiff3/kdiff3.exe
+[mergetool]
+    keepBackup = false
+[diff]
+    renames = true
+    guitool = kdiff3
+    tool = kdiff3
+[merge]
+    guitool = kdiff3
+    tool = kdiff3
 [core]
     autocrlf = true
     editor = vi
