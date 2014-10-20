@@ -52,3 +52,14 @@ _vimrc
 git/
 ntuser.*
 vimfiles/
+
+*.mdf
+*.ldf
+
+.dbshell
+.erlang.cookie
+.jscs.json
+.jshintrc
+.mongorc.js
+.vagrant.d/
+ShareFile/

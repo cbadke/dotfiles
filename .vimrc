@@ -143,3 +143,19 @@ map <leader>todo :sp ~/Dropbox/notes/todo.txt<cr>r
 map <leader>clean :set nocul<cr>:set nonumber<cr>
 
 let g:haddock_browser="C:\\Program\ Files\ (x86)\\Google\\Chrome\\Application\\chrome.exe"
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" TRAILING WHITESPACE
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" NEWLINE IN COMMAND MODE
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nmap <S-Enter> O<Esc>
+nmap <CR> o<Esc>
