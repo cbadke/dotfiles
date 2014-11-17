@@ -17,11 +17,6 @@ set shiftwidth=4
 set softtabstop=4
 set autoindent
 set showmatch
-set incsearch
-set hlsearch
-" make searches case-sensitive only if they contain upper-case characters
-set ignorecase smartcase
-" highlight current line
 set cursorline
 set number
 set switchbuf=useopen
@@ -34,7 +29,6 @@ set wildmode=longest,list
 set wildmenu
 let mapleader=","
 
-hi Search guibg=LightBlue ctermbg=LightBlue
 
 set background=dark
 
@@ -46,18 +40,31 @@ set directory=~/.vim/backup
 highlight OverLength ctermbg=darkred ctermfg=white guibg=#592929
 set colorcolumn=80
 
-" Settings for VimClojure
-let vimclojure#HighlightBuiltins=1      " Highlight Clojure's builtins
-let vimclojure#ParenRainbow=1           " Rainbow parentheses'!
-
 set splitbelow
 set splitright
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" NERDTree Config
+" VimClojure
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-autocmd vimenter * if !argc() | NERDTree | endif
-map <C-n> :NERDTreeToggle<cr>
+let vimclojure#HighlightBuiltins=1      " Highlight Clojure's builtins
+let vimclojure#ParenRainbow=1           " Rainbow parentheses'!
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Search settings
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" keep search pattern in center of screen
+nnoremap <silent> n nzz
+nnoremap <silent> N Nzz
+nnoremap <silent> * *zz
+nnoremap <silent> # #zz
+nnoremap <silent> g* g*zz
+
+" make searches case-sensitive only if they contain upper-case characters
+set ignorecase smartcase
+set incsearch
+set hlsearch
+hi Search guibg=LightBlue ctermbg=LightBlue
+nnoremap <cr> :nohlsearch<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CUSTOM AUTOCMDS
@@ -80,37 +87,11 @@ augroup END
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MISC KEY MAPS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Clear the search buffer when hitting return
-function! MapCR()
-  nnoremap <cr> :nohlsearch<cr>
-endfunction
-call MapCR()
-
-nmap <C-j> :GitGutterNextHunk<cr>
-nmap <C-k> :GitGutterPrevHunk<cr>
-imap <C-j> <esc>:GitGutterNextHunk<cr>
-imap <C-k> <esc>:GitGutterPrevHunk<cr>
-
 nmap <C-h> :bp<cr>
 nmap <C-l> :bn<cr>
 
 nmap <C-s> :w<cr>
 imap <C-s> <esc>:w<cr>i
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" MULTIPURPOSE TAB KEY
-" Indent if we're at the beginning of a line. Else, do completion.
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function! InsertTabWrapper()
-    let col = col('.') - 1
-    if !col || getline('.')[col - 1] !~ '\k'
-        return "\<tab>"
-    else
-        return "\<c-p>"
-    endif
-endfunction
-"inoremap <tab> <c-r>=InsertTabWrapper()<cr>
-"inoremap <s-tab> <c-n>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ARROW KEYS ARE UNACCEPTABLE - vim hard mode!
@@ -119,30 +100,6 @@ map <Left> <Nop>
 map <Right> <Nop>
 map <Up> <Nop>
 map <Down> <Nop>
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" RENAME CURRENT FILE
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function! RenameFile()
-    let old_name = expand('%')
-    let new_name = input('New file name: ', expand('%'), 'file')
-    if new_name != '' && new_name != old_name
-        exec ':saveas ' . new_name
-        exec ':silent !rm ' . old_name
-        redraw!
-    endif
-endfunction
-map <leader>r :call RenameFile()<cr>
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" LEADER COMMANDS 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <leader>np :sp ~/Dropbox/notes/notepad.txt<cr>r
-map <leader>ts :sp ~/Dropbox/notes/tool-sharpening.txt<cr>r
-map <leader>todo :sp ~/Dropbox/notes/todo.txt<cr>r
-map <leader>clean :set nocul<cr>:set nonumber<cr>
-
-let g:haddock_browser="C:\\Program\ Files\ (x86)\\Google\\Chrome\\Application\\chrome.exe"
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " TRAILING WHITESPACE
