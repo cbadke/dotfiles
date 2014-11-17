@@ -25,3 +25,6 @@
 [submodule ".vim/bundle/haskellmode-vim"]
 	path = .vim/bundle/haskellmode-vim
 	url = git@github.com:lukerandall/haskellmode-vim.git
+[submodule ".\\.vim\\bundle\\vim-ps1"]
+	path = .\\.vim\\bundle\\vim-ps1
+	url = git@github.com:PProvost/vim-ps1.git
